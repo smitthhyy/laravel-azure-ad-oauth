@@ -66,14 +66,14 @@ Note: This must be a https address, not http.
 
 7. Click on the `Register` button
 8. In the right pane, top section, locate the `Application (client) ID` and copy it's value to AZURE_AD_CLIENT_ID in your .env file.
-9. In the left menu bar under `Manage` click on "Certificates & Secrets". 
-10. In the pane on the right that just opened, under "Client secrets", click on the "+ New client secret" button.
-11. Enter a description for the key in the "Description" box
+9. In the left menu bar under `Manage` click on `Certificates & Secrets`. 
+10. In the pane on the right that just opened, under "Client secrets", click on the `+ New client secret` button.
+11. Enter a description for the key in the `Description` box
 12. Select the expiry term you require (this authentication mechnism stops once this key expires)
-13. Click on the "Add" button. The key will be displayed once only
-14. Copy the key and add it to your .env file as the AZURE_AD_CLIENT_SECRET value.
-15. Click on "API permissions" and add any permissions that may be required
-16. Click on "Manifest" in the menu
+13. Click on the `Add` button. The key will be displayed once only
+14. Copy the key and add it to your .env file as the `AZURE_AD_CLIENT_SECRET` value.
+15. Click on `API permissions` and add any permissions that may be required
+16. Click on `Manifest` in the menu
 17. Add the following to the end of the exiting manifest. (Don't forget to add a comma to the last item that's in the manifest before pasting)
 ```
     "appRoles": [
@@ -89,7 +89,7 @@ Note: This must be a https address, not http.
         }
     ]
 ```
-18. Change the "id" value to a unique GUID of your choosing (ie don't use the one in the example here).
+18. Change the `id` value to a unique GUID of your choosing (ie don't use the one in the example here).
 
 
 
@@ -112,17 +112,17 @@ Note: This must be a https address, not http.
 		```
 		"appRoles": [
 		    {
-		      "allowedMemberTypes": [
-		        "User"
-		      ],
-		      "displayName": "Manager Role",
-		      "id": "08b0e9e3-8d88-4d99-b630-b9642a70f51e",// Any unique GUID
-		      "isEnabled": true,
-		      "description": "Manage stuff with this role",
-		      "value": "manager"
+		    	"allowedMemberTypes": [
+		        	"User"
+		        ],
+		        "displayName": "Manager Role",
+		        "id": "08b0e9e3-8d88-4d99-b630-b9642a70f51e",// Any unique GUID
+		        "isEnabled": true,
+		        "description": "Manage stuff with this role",
+		        "value": "manager"
 		    }
-		  ],
-		```
+		    ],
+		    ```
   3. Click "Save"
 8. In the "Keys" tab, enter a description (something like "App Secret"). Set Duration to "Never Expires". Click "Save". Copy the whole key. This will not show again. You will need this value for the `AZURE_AD_CLIENT_SECRET` env variable.
 9. Click on the "Managed application" link (It will be the name of the application);
