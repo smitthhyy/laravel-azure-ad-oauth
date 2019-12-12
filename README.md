@@ -55,18 +55,18 @@ If you need to set additional user fields when the user model is created at logi
 
 1. Open your browser to https://portal.azure.com/
 2. Navigate to `Azure Active Directory` -> `App registrations`.
-3. Click on the blue button "Register an application"
+3. Click on the blue button `Register an application`
 4. Provide a human readable name for the application.
-5. Select the type of accounts under "Supported account types".
-6. Under "Redirect URI (optional)" select "Web" and add the url in the form
+5. Select the type of accounts under `Supported account types`.
+6. Under `Redirect URI (optional)` select `Web` and add the url in the form
 
 https://your.domain.name/login/microsoft/callback
 
 Note: This must be a https address, not http.
 
-7. Click on the "Register" button
-8. In the right pane, top section, locate the "Application (client) ID" and copy it's value to AZURE_AD_CLIENT_ID in your .env file.
-9. In the left menu bar under "Manage" click on "Certificates & Secrets". 
+7. Click on the `Register` button
+8. In the right pane, top section, locate the `Application (client) ID` and copy it's value to AZURE_AD_CLIENT_ID in your .env file.
+9. In the left menu bar under `Manage` click on "Certificates & Secrets". 
 10. In the pane on the right that just opened, under "Client secrets", click on the "+ New client secret" button.
 11. Enter a description for the key in the "Description" box
 12. Select the expiry term you require (this authentication mechnism stops once this key expires)
@@ -75,7 +75,7 @@ Note: This must be a https address, not http.
 15. Click on "API permissions" and add any permissions that may be required
 16. Click on "Manifest" in the menu
 17. Add the following to the end of the exiting manifest. (Don't forget to add a comma to the last item that's in the manifest before pasting)
-
+```
     "appRoles": [
         {
             "allowedMemberTypes": [
@@ -88,7 +88,7 @@ Note: This must be a https address, not http.
             "value": "manager"
         }
     ]
-
+```
 18. Change the "id" value to a unique GUID of your choosing (ie don't use the one in the example here).
 
 
