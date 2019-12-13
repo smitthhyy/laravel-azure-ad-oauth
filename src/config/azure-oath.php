@@ -17,7 +17,13 @@ return [
     'credentials' => [
         'client_id' => env('AZURE_AD_CLIENT_ID', ''),
         'client_secret' => env('AZURE_AD_CLIENT_SECRET', ''),
-        'redirect' => Request::root().'/login/microsoft/callback'
+        'redirect' => '/login/microsoft/callback'
+    ],
+
+    // The fields that will be added to generated code request link
+    // You can't override the default ones here, like client_id, redirect_uri, state, etc.
+    'code_fields' => [
+        //'prompt' => 'login', // uncomment to force users fill their credentials in Azure
     ],
 
     // The route to redirect the user to upon login.

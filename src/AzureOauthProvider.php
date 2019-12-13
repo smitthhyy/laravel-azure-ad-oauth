@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 use Laravel\Socialite\Two\User;
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
+use Laravel\Socialite\Two\InvalidStateException;
 
 class AzureOauthProvider extends AbstractProvider implements ProviderInterface
 {
@@ -59,6 +60,11 @@ class AzureOauthProvider extends AbstractProvider implements ProviderInterface
 
         return $user->setToken($token)
                     ->setRefreshToken(Arr::get($response, 'refresh_token'));
+    }
+
+    protected function getCodeFields($state = null)
+    {
+        return array_merge(config('azure-oath.code_fields', []), parent::getCodeFields($state));
     }
 
     protected function mapUserToObject(array $user)

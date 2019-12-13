@@ -15,7 +15,7 @@ Metrogistics\AzureSocialite\ServiceProvider::class,
 Publish the config and override any defaults:
 
 ```
-php artisan vendor publish
+php artisan vendor:publish
 ```
 
 Add the necessary env vars:
@@ -133,3 +133,10 @@ Note: This must be a https address, not http.
 10. Under the "Properties" tab, enable user sign-in. Make user assignment required. Click "Save".
 11. Under the "Users and groups" tab, add users and their roles as needed.
 
+# Updated from original by metrogistics
+Includes:
+ - pr4 by bram1028 which fixes issue #3
+ - pr8 by nexxai which fixes a issue #1 plus typo in readme
+ - pr11 by grothentor which adds params to code request link using config
+
+ 
