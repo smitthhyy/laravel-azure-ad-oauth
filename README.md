@@ -74,8 +74,9 @@ Note: This must be a https address, not http.
 14. Copy the key and add it to your .env file as the `AZURE_AD_CLIENT_SECRET` value.
 15. Click on `API permissions` and add any permissions that may be required
 16. Click on `Manifest` in the menu
-17. Add the following to the end of the exiting manifest. (Don't forget to add a comma to the last item that's in the manifest before pasting)
+17. Add roles as nessesary to the end of the exiting manifest using the following format changing the id value to a unique GUID of your choosing for each. (Don't forget to add a comma to the last item that's in the manifest before pasting)
 ```
+    ...,
     "appRoles": [
         {
             "allowedMemberTypes": [
@@ -90,8 +91,11 @@ Note: This must be a https address, not http.
     ]
 ```
 18. Change the `id` value to a unique GUID of your choosing (ie don't use the one in the example here).
-
-
+19. In the left menu, click on `Enterprise applications` then in the right pane, click on your application.
+20. On the left, click on `Properties` and locate `User assignment required?` in the right pane.
+21. Change `User assignment required?` to `Yes`
+22. Click the `Save` link at the top (right pane)
+23. In the left menu, click `Users and groups` and add users/groups as required.
 
 ### Legacy version of the Application Registration Portal. (Pre October 2019)
 
