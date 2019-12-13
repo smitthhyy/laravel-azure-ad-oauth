@@ -50,7 +50,6 @@ If you need to set additional user fields when the user model is created at logi
 
 ## Azure AD Setup
 
-
 ### New version of the Application Registration Portal (post October 2019)
 
 1. Open your browser to https://portal.azure.com/
@@ -96,6 +95,13 @@ Note: This must be a https address, not http.
 21. Change `User assignment required?` to `Yes`
 22. Click the `Save` link at the top (right pane)
 23. In the left menu, click `Users and groups` and add users/groups as required.
+24. In the menu area under `Security` click on `Permissions`.
+25. Click on the button `Grant admin consent for Default Directory`. A new browser window will open with the Microsft login screen
+26. Login to your admin account. It will present a window with `Permissions requested
+Accept for your organization`. 
+27. Click on the `Accept` button. The browser will now close
+
+You are now ready to log into your application using Azure AD credentials.
 
 ### Legacy version of the Application Registration Portal. (Pre October 2019)
 
@@ -133,10 +139,9 @@ Note: This must be a https address, not http.
 10. Under the "Properties" tab, enable user sign-in. Make user assignment required. Click "Save".
 11. Under the "Users and groups" tab, add users and their roles as needed.
 
-# Updated from original by metrogistics
+# Updated in this repository from the original by metrogistics
 Includes:
  - pr4 by bram1028 which fixes issue #3
  - pr8 by nexxai which fixes a issue #1 plus typo in readme
  - pr11 by grothentor which adds params to code request link using config
 
- 
